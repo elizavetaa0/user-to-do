@@ -1,46 +1,74 @@
-# Getting Started with Create React App
+# Проект User To-Do
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Описание
 
-## Available Scripts
+Приложение для просмотра списка пользователей и количества назначенных им заданий.
 
-In the project directory, you can run:
+## Процесс разработки
 
-### `npm start`
+### Шаг 1. Инициализация проекта
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+1. Создан новый проект с помощью утилиты
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+   `npx create-react-app user-to-do --template typescript`
 
-### `npm test`
+2. Установлены необходимые зависимости - classnames, react-svg, gh-pages, sass
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### Шаг 2. Создание базовой структуры проекта
+1. Созданы базовые компоненты `Table`, `TableRow`
+   
+2. Для каждого из компонентов созданы отдельные файлы с типизацией данных, а также для их стилизации
 
-### `npm run build`
+3. Определены типы для пользоваетелей и заданий на освновании данных, получаемых с API - `TUser`, `TTodos`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+4. Разработан кастомный хук `useDevice`, который учитывает ширину экрана и позволяет адаптировать внешний вид приложения к разный устройствам
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### Шаг 3. Настройка API для получения данных
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+1. Созданы функции, которые используются для получения данных с сервера
 
-### `npm run eject`
+2. В каждой функции используется проверка на успешность ответа с сервера
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+### Шаг 4. Добавление функциональности для `TableRow`
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+ - `TableRow` - для отображения информации о каждом пользователе в таблице. Он получает индекс, имя пользователя, email и количество заданий как пропсы
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+### Шаг 5. Добавление функциональности для `Table`
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+ - `Table` - для отображения списка пользователей и их задач в виде таблицы. Он принимает пользователей и задания как свойства и отображает их в виде строки таблицы
 
-## Learn More
+### Шаг 6. Настройка GitHub Pages для развертывания
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+1. Добавлено поле `homepage` в `package.json`
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+2. Настроены скрипты `npm run build` и `npm run deploy`
+
+## Загрузка и запуск проекта
+
+### Шаг 1. Клонирование репозитория
+
+`git clone https://github.com/elizavetaa0/user-to-do.git`
+
+### Шаг 2. Перейти в директорию проекта
+
+`cd user-to-do`
+
+### Шаг 3. Установка зависимостей
+
+`npm install`
+
+### Шаг 4. Запуск проекта
+
+`npm start`
+
+## Доступные скрипты
+
+1. `npm start` - запускает проект в режиме разработке. По умолчанию по адресу `http://localhost:3000`
+
+2. `npm test` - запускает тесты (при наличии)
+
+3. `npm run build` - запускает сборку для оптимизации приложения
+
+4. `npm run eject` - используется для извлечения конфигурации CRA для ее видоизменения
+
+5. `npm run deploy` - используется для развертывания приложения
