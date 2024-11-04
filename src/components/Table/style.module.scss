@@ -1,0 +1,39 @@
+.table {
+  inline-size: 100%;
+  border: 1px solid rgba($color: #fff, $alpha: .1);
+  border-radius: 8px;
+  border-spacing: 0;
+}
+
+.table__header {
+  color: rgba($color: #fff, $alpha: .3);
+  background-color: rgba($color: #fff, $alpha: .04);
+  padding-block: 8.5px;
+  font-weight: 600;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.table__header_mobile {
+  font-size: 8px;
+  padding-block: 11px;
+}
+
+.table__header:not(:first-of-type) {
+  padding-inline-start: 12px;
+}
+
+.table th:first-child {
+  border-top-left-radius: 8px;
+}
+
+.table th:nth-child(2) {
+  text-align: left;
+}
+
+.table th:last-child {
+  border-top-right-radius: 8px;
+  text-align: left;
+}
+

@@ -1,0 +1,47 @@
+@import '../fonts/fonts.scss';
+
+* {
+  margin: 0 auto;
+  padding: 0;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+  background-color: #373E45;
+  color: #FFFFFF;
+}
+
+.container {
+  margin: 80px 80px 66px;
+}
+
+.container__tablet {
+  margin-block-end: 100px;
+}
+
+.container__mobile {
+  margin: 56px 40px 145px;
+}
+
+.title {
+  font-size: 48px;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+
+.title__mobile {
+  font-size: 24px;
+}
+
+.subtitle {
+  opacity: .3;
+  font-size: 16px;
+  font-weight: 400;
+  margin-bottom: 48px;
+}
+
+.subtitle__mobile {
+  font-size: 12px;
+  margin-bottom: 24px;
+}
